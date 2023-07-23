@@ -1,11 +1,15 @@
 const express = require('express');
-
+const dotenv = require('dotenv');
+const connectDB = require('./Mongodb/databaseconnection')
 const app = express();
-const PORT = 5000;
+
+
+dotenv.config({path:'./Config/config.env'})
+const PORT = process.env.PORT;
+
 
 
 //import all routes
-
 const home = require('./routes/home');
 const signup = require('./routes/signup');
 const login = require('./routes/login');
