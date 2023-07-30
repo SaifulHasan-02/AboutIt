@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const middleware = require('../middleware/middleware');
 const User = require('../models/userSchema');
-const { log } = require('console');
+
 
 
 router.get('/', middleware, (req, res)=>{
@@ -14,6 +14,8 @@ router.post('/', async (req, res)=>{
 
     if(!name || !work || !phone || !email || !password || !confirmpassword){
         return res.status(402).json({error: "Please fill option properly"})
+    }else if(password != confirmpassword){
+        return res.status(402).json({error: "Password and Confirm password not match"})
     }
     try{
         const userExit = await User.findOne({email: email})
@@ -22,8 +24,10 @@ router.post('/', async (req, res)=>{
             return res.status(402).json({error: "User already exit"})
         }
         const user = new User({name, work, phone, email, password, confirmpassword})
-
+        //for hashing password call pre method in userSchema.js file
+    
         await user.save();
+    
         console.log("Registration successful")
         res.status(202).json({msg: "Registration Successful"});
         
@@ -33,8 +37,6 @@ router.post('/', async (req, res)=>{
     
 
 })
-
-
 
 
 module.exports = router;
