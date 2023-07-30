@@ -7,7 +7,7 @@ const app = express();
 dotenv.config({path:'./Config/config.env'})
 const PORT = process.env.PORT;
 
-
+app.use(express.json());
 
 //import all routes
 const home = require('./routes/home');
@@ -21,9 +21,6 @@ app.use('/signup', signup);
 app.use('/login', login);
 app.use('/about', about)
 app.use('/contact', contact)
-
-
-
 
 app.listen(PORT, ()=>{
     console.log(`Server is listening at port number: ${PORT}`)
