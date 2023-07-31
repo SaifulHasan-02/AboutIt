@@ -27,17 +27,16 @@ router.post('/', async (req, res)=>{
 
             //storing token into the cookie
             res.cookie('jwttoken', token, {
-                expires: new Date(Date.now() + 60000),
+                expires: new Date(Date.now() + 600000),
                 httpOnly: true
             })
 
             if(!isMatch){
                 res.status(404).json({error: "Invalid login credentials from inside"})
             }else{
-                res.status(202).json({msg: "Login successful"})
+                res.status(202).json({msg: "Login successfully from Backend"})
             }
-        }
-        
+        }   
         
     }catch(err){
         console.log("Invalid login credentials from outside")
