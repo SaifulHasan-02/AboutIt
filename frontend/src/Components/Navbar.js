@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Navbar = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="/#">AboutIt</a>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light" id="nav-id">
+                <a className="navbar-brand" id="title" href="/#">About<span className="des">It</span></a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -13,19 +13,19 @@ const Navbar = () => {
                     <ul className="navbar-nav ml-auto">
                     
                         <li className="nav-link-active">
-                            <NavLink to="/">Home</NavLink>
+                            <NavLink to="/" style={{textDecoration: 'none' }}>Home</NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/signup">Sign Up</NavLink> 
+                        <li className="nav-link-active">
+                            <NavLink to="/signup" style={{textDecoration: 'none' }}>Signup</NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/login">Login</NavLink>
+                        <li className="nav-link-active">
+                            <NavLink to="/login" style={{textDecoration: 'none' }}>Login</NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/about">About</NavLink>                        
+                        <li className="nav-link-active">
+                            <NavLink to="/about" style={{textDecoration: 'none' }}>About</NavLink>                        
                         </li>
-                        <li>
-                            <NavLink to="/contact">Contact</NavLink>                          
+                        <li className="nav-link-active">
+                            <NavLink to="/contact" style={{textDecoration: 'none' }}>Contact</NavLink>                          
                         </li>
                     </ul>    
 

@@ -20,33 +20,40 @@ const Login = () => {
             })
         })
         let data = await res.json();
-        if(data.status === 404 | !data){
-            window.alert("Invalid Credentials")
-            console.log("Invalid Credentials")
-        }else{
+        console.log()
+        console.log('>>>>>>>>>>>>>')
+        console.log(JSON.stringify(data.status))
+        console.log('>>>>>>>>>>>>>')
+        if(data.status==202){
             window.alert("Login Successfull");
             console.log("Login Successfull");
             navigate('/');
+        }else{
+            window.alert("Invalid Credentials")
+            console.log("Invalid Credentials")
         }
     }
     
 
     return (
         <>
+        <div className='login-form-container'>
           <form method='POST'>
+               <h1 className="form-group">Enter login credentials</h1>
                 <div className="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" name="email" className="form-control" id="exampleInputEmail1" value={email} onChange={(e)=>{setEmail(e.target.value)}} aria-describedby="emailHelp" />
+                    <input type="email" name="email" className="form-control" id="exampleInputEmail1" value={email.email} onChange={(e)=>{setEmail(e.target.value)}} aria-describedby="emailHelp" />
                 </div>
                 
                 <div className="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="password" className="form-control" id="exampleInputPassword1" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
+                    <input type="password" name="password" className="form-control" id="exampleInputPassword1" value={password.password} onChange={(e)=>{setPassword(e.target.value)}}/>
                 </div>
-                <br></br>
-                <button type="submit" onClick={login}className="btn btn-primary">Submit</button> 
                 
-         </form>
+                <button type="submit" onClick={login}className="btn btn-primary" id="btn">Submit</button> 
+                
+          </form>
+         </div>
            
         </>
     )
