@@ -24,7 +24,7 @@ const Login = () => {
         console.log('>>>>>>>>>>>>>')
         console.log(JSON.stringify(data.status))
         console.log('>>>>>>>>>>>>>')
-        if(data.status==202){
+        if(data.status === 202){
             window.alert("Login Successfull");
             console.log("Login Successfull");
             navigate('/');
@@ -37,9 +37,9 @@ const Login = () => {
 
     return (
         <>
-        <div className='login-form-container'>
+        <div className='form-container'>
           <form method='POST'>
-               <h1 className="form-group">Enter login credentials</h1>
+               <h1 className="form-group-title">Login</h1>
                 <div className="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" name="email" className="form-control" id="exampleInputEmail1" value={email.email} onChange={(e)=>{setEmail(e.target.value)}} aria-describedby="emailHelp" />

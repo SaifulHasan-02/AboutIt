@@ -1,12 +1,14 @@
 /*css for navbar*/
-
+body{
+  overflow-x: hidden;
+}
 #title{
   margin-left: 12px;
   font-size: xx-large;
   font-weight: bold;
   color: rgb(137, 95, 235);
 }
-.des{
+.span{
   color: rgb(236, 114, 114);
 }
 #navbarSupportedContent{
@@ -19,14 +21,19 @@
   margin: 5px;
 }
 /*css for login page */
-.login-form-container{
+.form-container{
   padding: 10px;
-  top: 0%;
+  margin-top: 2%;
+  margin-left: 25%;
   left: 25%;
   width: 50%;
   height: 30%;
   border-radius: 10px;
   background-color: #eef2f5;
+}
+.form-group-title{
+  margin-top: 2px;
+  text-align: center;
 }
 .form-group{
   margin: 10px;
@@ -35,3 +42,36 @@
   margin-left: 10px;
   margin: 10px;
 }
+
+.hori-line{
+  background-color: black;
+  margin: auto;
+  width: 45%;
+  margin-top: 2%; 
+}
+
+.logo-item{
+  width: 40px;
+  height: 40px;
+  margin-left: 100px;
+
+}
+img:hover{
+  background-color: rgb(66, 65, 65);
+}
+.rows{
+  width: 50%;
+  margin-top: 20px;
+  margin-left: 30%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  
+}
+.right-container{
+  margin-left: 43%;
+}
+.right-title{
+  color: black;
+}
+

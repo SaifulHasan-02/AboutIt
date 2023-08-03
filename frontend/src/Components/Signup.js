@@ -43,7 +43,8 @@ const Signup = () => {
     return (
         <>
             <form method="POST">
-                <div className="login-form-container">
+                <div className="form-container">
+                    <h1 className='form-group-title'>Signup</h1>
                     <div className="form-group">
                         <label for="inputName">Name</label>
                         <input type="text" name="name" className="form-control" id="inputName" value={user.name} onChange={handleInput} />
